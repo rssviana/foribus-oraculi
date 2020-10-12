@@ -1,0 +1,44 @@
+name: Foribus Ocaruli Pipeline
+
+on:
+  push:
+    branches:
+    - main
+    - develop
+
+  pull_request:
+    branches:
+    - main
+    - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - uses: actions/cache@v1
+        with: 
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          restore-key: |
+            ${{ runner.os }}-yarn-
+
+      - name: Installing dependencies ...
+        run: yarn
+
+      - name: Formating ...
+        run: yarn run format  
+
+      - name: Linting ... 
+        run: yarn run lint 
+
+
+      - name: Testing ... 
+        run: yarn run test 
