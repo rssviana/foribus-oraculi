@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-## [0.1.0](https://github.com/rssviana/foribus-oraculi/releases/tag/v0.0.1 - 10-12-2020
+## [0.0.1](https://github.com/rssviana/foribus-oraculi/releases/tag/v0.0.1 - 10-12-2020
 
 ### Added
 - [Structure and foundations - issue #1](https://github.com/rssviana/foribus-oraculi/issues/1)
