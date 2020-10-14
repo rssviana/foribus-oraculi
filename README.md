@@ -8,6 +8,8 @@ This project was created with the purpose of learning new tools and new ways to 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using typescript template.
 
+> You can see the application up and running here: [Foribus Oraculi](https://foribus-oraculi.netlify.app)
+
 ## How to run
 
 Install all dependencies using `yarn install`
