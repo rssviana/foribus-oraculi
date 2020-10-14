@@ -12,6 +12,9 @@ import { UserInfoContainer, UserInfoContent } from './styles';
 const UserInfo: React.FC = () => {
   const user = useSelector((s) => s.USER.data[0]);
   const repositories = useSelector((s) => s.REPOS.data);
+
+  const userError = useSelector((s) => s.USER.error);
+
   const userIsLoading = useSelector((s) => s.USER.loading);
   const userReposIsLoading = useSelector((s) => s.REPOS.loading);
 
@@ -20,12 +23,9 @@ const UserInfo: React.FC = () => {
   const hasAnyRepo = repositories && repositories.length > 0
 
   useEffect(() => {
-    if(!user) history.push(`/home`) 
-  }, [user, history]);
-
-  useEffect(() => {
-    if(user && repositories.length > 0) history.push(`/user-info/${user.login}`) 
-  }, [user, repositories, history]);
+    if(userError) history.push('/not-found')
+    if(user &&  !userError && repositories.length > 0) history.push(`/user-info/${user.login}`) 
+  }, [user, repositories, userError, history]);
 
   if(userIsLoading || userReposIsLoading) {
     return <Loader />
