@@ -33,6 +33,7 @@ const reducer = createReducer<ReposState, ReposActions>(initialState)
 
   .handleAction(actions.repos.failure, (state) => ({
     ...state,
+    data: [],
     loading: false,
     error: true,
     success: false,
