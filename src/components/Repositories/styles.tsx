@@ -6,13 +6,15 @@ export const RepoList = styled.ul`
   list-style: none;
   margin: 0 0 0 4rem;
   padding: 0;
-  max-width: 44rem; ;
+  max-width: 44rem;
 `;
 
 export const RepoItem = styled.li`
   display: flex;
   flex-direction: column;
   margin-bottom: 1.8rem;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const RepoTitle = styled.h3`

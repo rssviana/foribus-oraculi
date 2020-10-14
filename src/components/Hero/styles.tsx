@@ -49,6 +49,7 @@ export const Button = styled.button`
   border-bottom-right-radius: 0.12rem;
   border-top-right-radius: 0.12rem;
   border: none;
+  cursor: pointer;
   display: inline-flex;
   height: 2.9rem;
   justify-content: center;

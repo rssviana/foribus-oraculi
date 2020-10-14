@@ -1,4 +1,5 @@
 import React from 'react';
+import { Repository } from 'services/github/types'
 
 import {
   RepoList,
@@ -10,18 +11,11 @@ import {
 
 import SvgStar from 'assets/icons/star';
 
-interface Repository {
-  title: string;
-  link: string;
-  description: string;
-  stars: string;
-}
-
-type Props = {
+type RepositoriesProps = {
   content: Repository[];
 };
 
-const Repositories: React.FC<Props> = props => {
+const Repositories: React.FC<RepositoriesProps> = props => {
   const { content } = props;
 
   const openRepository = (link: string) => {
@@ -32,14 +26,14 @@ const Repositories: React.FC<Props> = props => {
     <RepoList>
       {content &&
         content.map((repo: Repository) => (
-          <RepoItem key={repo.title}>
-            <RepoTitle onClick={() => openRepository(repo.link)}>
-              {repo.title}
+          <RepoItem key={repo.id}>
+            <RepoTitle onClick={() => openRepository(repo.html_url)}>
+              {repo.name}
             </RepoTitle>
             <RepoDescription>{repo.description}</RepoDescription>
             <RepoStars>
               <SvgStar />
-              <span>{repo.stars}</span>
+              <span>{repo.stargazers_count}</span>
             </RepoStars>
           </RepoItem>
         ))}
