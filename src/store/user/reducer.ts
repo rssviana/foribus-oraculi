@@ -31,13 +31,14 @@ const reducer = createReducer<UserState, UserActions>(initialState)
     updatedOn: Date.now(),
   }))
 
-  .handleAction(actions.user.failure, (state) => ({
+  .handleAction(actions.user.failure, (state, { payload }) => ({
     ...state,
     data: [],
     loading: false,
     error: true,
     success: false,
     updatedOn: Date.now(),
+    messages: payload,
   }));
 
 export default reducer;

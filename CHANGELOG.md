@@ -4,10 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased](https://github.com/rssviana/foribus-oraculi/releases/tag/v1.2.0) - 10-15-2020
+
+### Added
+-[store tests - issue #17](https://github.com/rssviana/foribus-oraculi/issues/17)
+
 ## [1.1.0](https://github.com/rssviana/foribus-oraculi/releases/tag/v1.1.0) - 10-14-2020
 
 ### Added
--[Oredering repositories by stars](https://github.com/rssviana/foribus-oraculi/issues/21)
+-[Oredering repositories by stars - issue #21](https://github.com/rssviana/foribus-oraculi/issues/21)
 
 ## [1.0.1](https://github.com/rssviana/foribus-oraculi/releases/tag/v1.0.1) - 10-14-2020
 
