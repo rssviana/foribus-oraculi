@@ -33,8 +33,8 @@ export interface User {
   public_gists: number;
   followers: number;
   following: number;
-  created_at: Date;
-  updated_at: Date;
+  created_at: string;
+  updated_at: string;
 }
 
 export type UserActions = ActionType<typeof actions>;

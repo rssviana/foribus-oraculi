@@ -31,13 +31,14 @@ const reducer = createReducer<ReposState, ReposActions>(initialState)
     updatedOn: Date.now(),
   }))
 
-  .handleAction(actions.repos.failure, (state) => ({
+  .handleAction(actions.repos.failure, (state, { payload }) => ({
     ...state,
     data: [],
     loading: false,
     error: true,
     success: false,
     updatedOn: Date.now(),
+    messages: payload,
   }));
 
 export default reducer;
